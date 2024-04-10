@@ -10,10 +10,10 @@ const RoutesWithAnimation: React.FC<{ profile: GitProfile }> = ({ profile }) => 
 
   return (
     <Routes location={location} key={location.key}>
-      <Route path="/" element={<Landing />} />
-      <Route path="/about" element={<About profile={profile} />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/contact" element={<Contact />} />
+      <Route path="/Portfolio-React" element={<Landing />} />
+      <Route path="/Portfolio-React/about" element={<About profile={profile} />} />
+      <Route path="/Portfolio-React/projects" element={<Projects />} />
+      <Route path="/Portfolio-React/contact" element={<Contact />} />
     </Routes>
   );
 }

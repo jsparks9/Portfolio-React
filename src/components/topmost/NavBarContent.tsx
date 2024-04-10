@@ -56,7 +56,7 @@ const NavBarContent: React.FC<{ profile: GitProfile }> = ({ profile }) => {
           <Logo
               id='logo' 
               onClick={() => {
-                  navigate('/about');
+                  navigate('/Portfolio-React/about');
               }}
           >
             Josiah Sparks
@@ -72,19 +72,19 @@ const NavBarContent: React.FC<{ profile: GitProfile }> = ({ profile }) => {
         <Right>
             <MenuItem
                 id='home-btn' 
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/Portfolio-React')}
             > Home </MenuItem>
             <MenuItem
                 id='about-btn' 
-                onClick={() => navigate('/about')}
+                onClick={() => navigate('/Portfolio-React/about')}
             > About </MenuItem>
             <MenuItem
                 id='projects-btn' 
-                onClick={() => navigate('/projects')}
+                onClick={() => navigate('/Portfolio-React/projects')}
             > Projects </MenuItem>
             <MenuItem
                 id='contact-btn' 
-                onClick={() => navigate('/contact')}
+                onClick={() => navigate('/Portfolio-React/contact')}
             > Contact </MenuItem>
         </Right>
       </Wrapper>
