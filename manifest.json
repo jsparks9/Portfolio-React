@@ -2,7 +2,7 @@
   "short_name": "Portfolio",
   "name": "Portfolio Webpage Project",
   "icons": [],
-  "start_url": ".",
+  "start_url": "/Portfolio-React",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
