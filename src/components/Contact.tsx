@@ -33,8 +33,8 @@ const Container = styled.div`
 `;
 
 const st = "josiah.sparks";
-const ext = "my.utsa.edu"
-const full = "mailto:" + st + "@" + ext
+const ext = "gmail.com"
+const full = "mailto:" + st + "78@" + ext
 
 const Contact = () => {
 
