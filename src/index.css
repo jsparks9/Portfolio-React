@@ -268,13 +268,13 @@ ul ul {
 
 /*________________________________________________________________________________________________________________________________*/
 /*MEDIAQUERIES*/
-@media only all and (max-width: 1300px) {
+/* @media only all and (max-width: 1300px) {
   .weatherforcastbox{
       display: none;
   }
 
-}
-@media only all and (max-width: 1200px) {
+} */
+@media only all {
   .collumn{
       width: 31%;
   }

@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  background-image: url('https://i.pinimg.com/originals/11/b6/76/11b6769c8f2ea91b25fa0bb10bcaf4ab.jpg');
+  background-image: url('https://raw.githubusercontent.com/jsparks9/Portfolio-React/main/images/newspapers.jpg');
 `;
 
 const Container = styled.div`

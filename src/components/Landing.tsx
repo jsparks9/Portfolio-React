@@ -1,121 +1,87 @@
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import GitProfile from "../models/GitProfile";
+import { motion } from "framer-motion";
 
-const Landing = () => {
+const VintageImage = styled.img`
+  position: relative;
+  top: 0;
+  right: 0;
+  position: center;
+  height: 15em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  filter: blur(0.35px) sepia(100%) contrast(75%) brightness(75%) saturate(0%);
+  -webkit-filter: blur(0.35px) sepia(100%) contrast(75%) brightness(75%) saturate(0%);
+`;
+
+const Landing: React.FC<{ profile: GitProfile }> = ({ profile }) => {
+  const firstName = "Josiah";
+  const lastName = "Sparks";
+  const firstLast = firstName + " " + lastName;
+
+  const properCase = (str: string) => str.split(/\s+/)
+    .map(word => word.length > 2 ? word.charAt(0).toUpperCase() + word.slice(1) : word) 
+    .join(" ")
+
   return (
-    <motion.div
-      initial={{ x: "100vw" }}
-      animate={{ x: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-    >
+  <motion.div
+    initial={{ x: "100vw" }}
+    animate={{ x: 0 }}
+    transition={{ duration: 0.4, ease: "easeOut" }}
+  >
     <div className="content">
       <div className="collumns">
         <div className="collumn">
-          <div className="head">
-            <span className="headline hl1">
-              Overview of This Website
-            </span>
-            <p>
-              <span className="headline hl6">A React App</span>
-            </p>
+            <div className="head">
+              <span className="headline hl1">From Math to Industry</span>
+              <p>
+                <span className="headline hl6">Sailing Into Software</span>
+              </p>
+            </div>
+            {firstName} began his software engineering career shortly after starting graduate 
+            school in 2022. After a year of experience involving enterprise-level systems
+            design, intense Java, and the Spring-React tech stack, he returned to graduate
+            school. Now being just a few courses from getting his master's in applied math,
+            he is pursuing further industry experience. This has been a journey of very 
+            rewarding challenges, fascinating solutions, and plenty of coding. 
+            <p />
           </div>
-          This website was designed to showcase the skills and traits of its 
-          author, Josiah. It is built using React with the IDE VSCode. An 
-          online template for the newspaper format was migrated to React as 
-          were elements of its functionality. 
-          <h4>
-            Tech Used For This Website
-          </h4>
-          <ul>
-            <li>
-              VSCode
-            </li>
-            <li>
-              TypeScript
-            </li>
-            <li>
-              JavaScript
-            </li>
-            <li>
-              CSS
-            </li>
-            <li>
-              HTML
-            </li>
-            <li>
-              React.js
-            </li>
-            <li>
-              Packages
-            </li>
-            <ul>
-              <li>
-                Axios
-              </li>
-              <li>
-                Framer-motion
-              </li>
-              <li>
-                Styled-components
-              </li>
-            </ul>
-          </ul>
+          <div className="collumn">
+          <div className="head">
+            <span className="headline hl1">Introducing {firstName}</span>
+            <p>
+              <span className="headline hl6">{properCase(profile.bio)}</span>
+            </p>
+          <VintageImage
+            src={profile.avatar_url}
+            alt=""
+          />
+          <p><a 
+              href="https://drive.google.com/file/d/1x7LLA0QHj8aa2xQ7dtkylPp9B7yJ39Yz/view?usp=sharing"
+              target="_blank"
+            >
+            <strong>Resume Download</strong>
+          </a></p>
+          </div>
+          {firstLast} is a junior software engineer and a graduate student of Applied Math. 
+          He spends his free time on multidisciplinary research, upskilling, and small data 
+          science projects in Excel and Python. He believes in adding value, helping others, 
+          and setting the team up for success. {firstName} brings leadership, enterprise-level 
+          experience, and strong work ethic to the team.
+          <p />
         </div>
-
+        
         <div className="collumn">
-          <div className="head">
-            <span className="headline hl1">Project Organization</span>
-            <p>
-              <span className="headline hl4">
-                Neatly Placed Files
-              </span>
-            </p>
+            <div className="head">
+              <span className="headline hl1">Mathematical Journey</span>
+              <p>
+                <span className="headline hl6">Beyond The Buzzwords</span>
+              </p>
+            </div>
+            <p />
           </div>
-          This app is a single page application (SPA) build with TypeScript. 
-          The structure of this project is very standard. It has a folder for 
-          components, which each dynamically produce a different part of the 
-          page. It has just one model, the GitProfile object, in the models 
-          folder. The remote folder contains TypeScript for Axios to make API 
-          calls. And the router folder contains files necessary to switch 
-          which page is being displayed within the app. 
-          <p/>
-          {new Array(9).fill(<br/>)}
-          
-        </div>
-
-        <div className="collumn">
-          <div className="head">
-            <span className="headline hl1">Specific Features</span>
-            <p>
-              <span className="headline hl2">The Fun Stuff</span>
-            </p>
-          </div>
-          <h4>Navigation Bar</h4>
-          <p>
-            The navigation bar seems to snap to the top when scrolling. Actually, 
-            there are two identical navigation bars. The one that snaps to the top
-            is always at the top but invisible. When the page detects that the user
-            has scrolled past the initial navigation bar, the invisible
-            bar becomes visible and interactable. Then when one scrolls up again, 
-            this bar returns to being invisible. {" "}
-          </p>
-
-          <h4>Dynamic Date</h4>
-          <p>
-            The date displayed at the top of the page is not static. Rather, it 
-            renders dynamically based on the local date. {" "}
-          </p>
-
-          <h4>Page Switching Animation</h4>
-          <p>
-            This feature was implemented with the 'motion' import from the 
-            Framer-motion package. It uses a simple initial, final, and 
-            transition definition to produce the effect. 
-          </p>
-        </div>
-
       </div>
     </div>
-  
   </motion.div>);
 }
 

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import GitProfile from '../../models/GitProfile';
+import { useEffect, useState } from 'react';
 
 const Wrapper = styled.div`
   padding: 0px 20px 0px 20px;
@@ -34,20 +35,55 @@ const MenuItem = styled.a`
   margin-left: 25px;
 `;
 
+const PortfolioInd = styled.a`
+  font-size: 1.5em;
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: 'Garamond', serif; 
+`;
+
 const GitButton = styled.a`
   margin-left: 1em;
   display: inline-block;
   width: 2em;
   height: 2em;
-  background-image: url("https://cdn-icons-png.flaticon.com/512/25/25231.png");
+  background-image: url("https://raw.githubusercontent.com/jsparks9/Portfolio-React/main/images/gitHubLogo.png");
   background-size: cover;
   background-position: center;
   border: none;
   cursor: pointer;
 `
 
+const LinkedInButton = styled.a`
+  margin-left: 0.5em;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  background-image: url("https://raw.githubusercontent.com/jsparks9/Portfolio-React/main/images/linkedInLogo.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(0.35px);
+  -webkit-filter: blur(0.35px);
+  opacity: 0.87;
+  border: none;
+  cursor: pointer;
+`
+
+const linkedInURL = 'https://www.linkedin.com/in/josiah-sparks-a9b48928b/';
+
 const NavBarContent: React.FC<{ profile: GitProfile }> = ({ profile }) => {
+  const [windowWidth, setWindowWidth] = useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
       <Wrapper>
@@ -56,10 +92,10 @@ const NavBarContent: React.FC<{ profile: GitProfile }> = ({ profile }) => {
           <Logo
               id='logo' 
               onClick={() => {
-                  navigate('/Portfolio-React/about');
+                  navigate('/Portfolio-React');
               }}
           >
-            Josiah Sparks
+            Josiah&nbsp;Sparks
           </Logo>
 
         <GitButton
@@ -67,8 +103,15 @@ const NavBarContent: React.FC<{ profile: GitProfile }> = ({ profile }) => {
               href={profile.html_url}
               target='_blank'
           />
+        <LinkedInButton
+              id='gitLink' 
+              href={linkedInURL}
+              target='_blank'
+          />
 
         </Left>
+        {(windowWidth >= 800) ? <PortfolioInd>A&nbsp;Portfolio&nbsp;Site</PortfolioInd> : <></>}
+        
         <Right>
             <MenuItem
                 id='home-btn' 
