@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Left = styled.div`
+export const Left = styled.div`
   margin-top: 0.5em;
   margin-bottom: 1em;
   flex: 1;
@@ -18,9 +18,10 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.a`
+export const Logo = styled.a`
   font-size: 2em;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 const Right = styled.div`
@@ -33,18 +34,25 @@ const MenuItem = styled.a`
   font-size: 14px;
   cursor: pointer;
   margin-left: 25px;
+  &:hover { text-shadow: 
+    0 0 0.5px black, 
+    0 0 0.5px black, 
+    0 0 0.5px black, 
+    0 0 0.5px black
+  ;}
 `;
 
-const PortfolioInd = styled.a`
+export const PortfolioInd = styled.a`
   font-size: 1.5em;
   font-weight: 400;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
   font-family: 'Garamond', serif; 
+  user-select: none;
 `;
 
-const GitButton = styled.a`
+export const GitButton = styled.a`
   margin-left: 1em;
   display: inline-block;
   width: 2em;
@@ -56,7 +64,7 @@ const GitButton = styled.a`
   cursor: pointer;
 `
 
-const LinkedInButton = styled.a`
+export const LinkedInButton = styled.a`
   margin-left: 0.5em;
   display: inline-block;
   width: 2em;
@@ -71,7 +79,7 @@ const LinkedInButton = styled.a`
   cursor: pointer;
 `
 
-const linkedInURL = 'https://www.linkedin.com/in/josiah-sparks-a9b48928b/';
+export const linkedInURL = 'https://www.linkedin.com/in/josiah-sparks-a9b48928b/';
 
 const NavBarContent: React.FC<{ profile: GitProfile }> = ({ profile }) => {
   const [windowWidth, setWindowWidth] = useState(0);

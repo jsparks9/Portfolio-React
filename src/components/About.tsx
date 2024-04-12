@@ -69,6 +69,11 @@ const About = () => {
               <span className="headline hl2">The Fun Stuff</span>
             </p>
           </div>
+          <h4>Mobile Friendly</h4>
+          <p>
+            The navigation bar and article columns have customized CSS to accommodate 
+            mobile use. Resize the window horizontally to observe these effects. {" "}
+          </p>
           <h4>Navigation Bar</h4>
           <p>
             The navigation bar seems to snap to the top when scrolling. Actually, 

@@ -1,5 +1,15 @@
 import { motion } from "framer-motion"
+import { GitButton } from "./topmost/NavBarContent";
+import styled from "styled-components";
 
+
+const GitLink = styled.a`
+  align-items: center;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+
+`
 
 const Projects = () => {
   return (
@@ -10,18 +20,23 @@ const Projects = () => {
     >
     <div className="content">
       <div className="collumns">
-          <div className="collumn">
+          <div className="collumn max2cols">
               <div className="head">
-                <span className="headline hl1"><a 
-                  href="https://github.com/fasttrackd-student-work/spring-assessment-social-media-mar-2024-team-4"
-                  target="_blank"
-                >
-                Twitter Social Media API
-                </a></span>
+                <span className="headline hl1">
+                  Twitter Social Media API
+                </span>
                 <p>
                   <span className="headline hl4">A Spring Boot Project</span>
                 </p>
               </div>
+              <GitLink
+                href={'https://github.com/jsparks9/Spring-Social-Media'}
+                target='_blank'
+              >
+                <h3>GitHub Link</h3>        
+                <GitButton/>
+              </GitLink>
+
               <p>
                 This team project entailed building a Spring Boot 3 API from scratch by following 
                 an entity relationship diagram (ERD) and completing tasks listed in a Kanban board. 
@@ -49,7 +64,7 @@ const Projects = () => {
               <p><strong>Environment:</strong> Java 17, Spring Boot 3, JPA, PostgreSQL, PGAdmin, DBeaver, Postman, Git, IntelliJ, Maven</p>
             </div>
 
-            <div className="collumn">
+            <div className="collumn max2cols">
               <div className="head">
                 <span className="headline hl1">Selenium Point Collection</span>
                 <p>

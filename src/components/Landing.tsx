@@ -31,7 +31,7 @@ const Landing: React.FC<{ profile: GitProfile }> = ({ profile }) => {
   >
     <div className="content">
       <div className="collumns">
-        <div className="collumn">
+        <div className="collumn max2cols">
             <div className="head">
               <span className="headline hl1">From Math to Industry</span>
               <p>
@@ -46,7 +46,7 @@ const Landing: React.FC<{ profile: GitProfile }> = ({ profile }) => {
             rewarding challenges, fascinating solutions, and plenty of coding. 
             <p />
           </div>
-          <div className="collumn">
+          <div className="collumn max2cols">
           <div className="head">
             <span className="headline hl1">Introducing {firstName}</span>
             <p>
@@ -57,7 +57,7 @@ const Landing: React.FC<{ profile: GitProfile }> = ({ profile }) => {
             alt=""
           />
           <p><a 
-              href="https://drive.google.com/file/d/1x7LLA0QHj8aa2xQ7dtkylPp9B7yJ39Yz/view?usp=sharing"
+              href="https://drive.google.com/file/d/1od6KBgybc3TsTpIUcvC-8IKkny30Ylah/view?usp=sharing"
               target="_blank"
             >
             <strong>Resume Download</strong>
@@ -71,15 +71,15 @@ const Landing: React.FC<{ profile: GitProfile }> = ({ profile }) => {
           <p />
         </div>
         
-        <div className="collumn">
-            <div className="head">
-              <span className="headline hl1">Mathematical Journey</span>
-              <p>
-                <span className="headline hl6">Beyond The Buzzwords</span>
-              </p>
-            </div>
-            <p />
+        {/* <div className="collumn">
+          <div className="head">
+            <span className="headline hl1">Mathematical Journey</span>
+            <p>
+              <span className="headline hl6">Beyond The Buzzwords</span>
+            </p>
           </div>
+          <p />
+        </div> */}
       </div>
     </div>
   </motion.div>);

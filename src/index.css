@@ -275,19 +275,25 @@ ul ul {
 
 } */
 @media only all {
-  .collumn{
+  .collumn:not(.max2cols){
       width: 31%;
   }
-
+  .collumn.max2cols{
+      width: 47%;
+  }
+  
 }
-  @media only all and (max-width: 900px) {
-  .collumn{
+@media only all and (max-width: 900px) {
+  .collumn:not(.max2cols){
       width: 47%;
   }
 
 }
 @media only all and (max-width: 600px) {
-  .collumn{
+  .collumn:not(.max2cols){
+      width: 100%;
+  }
+  .collumn.max2cols{
       width: 100%;
   }
 .collumn + .collumn {

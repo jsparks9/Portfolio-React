@@ -52,7 +52,7 @@ const Navbar: React.FC<{ profile: GitProfile }> = ({ profile }) => {
             <NavBarContent profile={profile}/>
           </Container>
         </> : 
-        <MiniNavContent/>}
+        <MiniNavContent profile={profile}/>}
     </>
   );
 }
